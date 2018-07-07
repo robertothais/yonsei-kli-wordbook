@@ -7,8 +7,6 @@ import { About } from "./About";
 import { Deck } from "./Deck";
 import { Home } from "./Home";
 
-type stas = State["page"][keyof State["page"]];
-
 export interface Props {
   lexicon: Lexicon;
 }

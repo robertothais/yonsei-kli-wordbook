@@ -192,19 +192,19 @@ export class Deck extends React.Component<Props, State> {
     this.props.onSoundToggle();
   };
 
-  public handleShowPreviousCardKeyPress = (e: ExtendedKeyboardEvent) => {
+  public handleShowPreviousCardKeyPress = () => {
     if (!this.state.showMenu) {
       this.showPreviousCard();
     }
   };
 
-  public handleShowNextCardKeyPress = (e: ExtendedKeyboardEvent) => {
+  public handleShowNextCardKeyPress = () => {
     if (!this.state.showMenu) {
       this.showNextCard();
     }
   };
 
-  public handleToggleAnswerKeyPress = (e: ExtendedKeyboardEvent) => {
+  public handleToggleAnswerKeyPress = () => {
     if (!this.state.showMenu) {
       this.toggleAnswer();
     }
