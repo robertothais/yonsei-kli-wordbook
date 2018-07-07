@@ -202,7 +202,7 @@ export class Home extends React.Component<Props, State> {
               </div>
             </div>
           </form>
-          <div className="shield-container d-flex align-items-center justify-content-center">
+          <div className="shield-container d-flex align-items-center justify-content-center mb-3">
             <img src={shield} className="shield" />
           </div>
           <a href="/about" onClick={this.props.onNavigate}>
