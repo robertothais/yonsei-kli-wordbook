@@ -162,11 +162,11 @@ export class Lexicon {
 
   protected sliceLessons(level: number, range: Range): Slice {
     if (range && typeof range.lesson === "number") {
-      return this.sliceLesson(level, range.lesson, range);
+      return this.sliceWords(level, range.lesson, range);
     } else {
       const slice: Slice = [];
       this.levels[level].forEach((_, lesson) => {
-        slice.push(...this.sliceLesson(level, lesson, range));
+        slice.push(...this.sliceWords(level, lesson, range));
       });
       return slice;
     }
@@ -178,7 +178,7 @@ export class Lexicon {
    *    - 16 lessons per level
    *    - 256 words per lesson
   */
-  protected sliceLesson(level: number, lesson: number, range: Range): Slice {
+  protected sliceWords(level: number, lesson: number, range: Range): Slice {
     const start = typeof range.start === "number" ? range.start : 0;
     const end =
       typeof range.end === "number"
