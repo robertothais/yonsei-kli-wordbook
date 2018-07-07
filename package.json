@@ -1,0 +1,41 @@
+{
+  "name": "yonsei-kli-wordbook",
+  "version": "1.0.0",
+  "description": "Memorize vocabulary for Yonsei's Korean Language Institute program",
+  "scripts": {
+    "build": "parcel build --experimental-scope-hoisting index.html",
+    "start": "parcel index.html",
+    "deploy": "npm run build && firebase deploy",
+    "clean": "rm -rf .cache dist",
+    "prebuild": "npm run clean"
+  },
+  "author": {
+    "name": "Roberto Thais",
+    "email": "r@robertothais.org",
+    "url": "https://robertothais.org"
+  },
+  "homepage": "https://wordbook.kr/",
+  "keywords": [
+    "korean",
+    "flashcards",
+    "TypeScript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "mousetrap": "^1.6.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "shuffle-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/mousetrap": "^1.6.0",
+    "@types/react": "^16.4.6",
+    "@types/react-dom": "^16.0.6",
+    "@types/shuffle-array": "^0.0.28",
+    "node-sass": "^4.9.1",
+    "parcel-bundler": "^1.9.4",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.9.2"
+  }
+}
