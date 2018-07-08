@@ -61,7 +61,7 @@ export class Home extends React.Component<Props, State> {
     };
   }
 
-  public renderSelectLevel = (): JSX.Element => {
+  public SelectLevel = (): JSX.Element => {
     const options: JSX.Element[] = [
       <option value="" key={0}>
         All Levels
@@ -89,7 +89,7 @@ export class Home extends React.Component<Props, State> {
     );
   };
 
-  public renderSelectLesson = (): JSX.Element => {
+  public SelectLesson = (): JSX.Element => {
     const options: JSX.Element[] = [
       <option value="" key={0}>
         All Lessons
@@ -120,7 +120,7 @@ export class Home extends React.Component<Props, State> {
     );
   };
 
-  public renderSelectRange = (): JSX.Element => {
+  public SelectRange = (): JSX.Element => {
     let max = 0;
     if (
       typeof this.state.level === "number" &&
@@ -176,9 +176,15 @@ export class Home extends React.Component<Props, State> {
             Pick a level, lesson and range to get a shuffled deck of words.
           </p>
           <form>
-            <div className="form-group">{this.renderSelectLevel()}</div>
-            <div className="form-group">{this.renderSelectLesson()}</div>
-            <div className="form-group">{this.renderSelectRange()}</div>
+            <div className="form-group">
+              <this.SelectLevel />
+            </div>
+            <div className="form-group">
+              <this.SelectLesson />
+            </div>
+            <div className="form-group">
+              <this.SelectRange />
+            </div>
             <div className="from-group mt-sm-4">
               <div className="row submit-buttons">
                 <div className="col-sm mb-3">

@@ -204,7 +204,7 @@ export class App extends React.Component<Props, State> {
     });
   };
 
-  public renderPage() {
+  public Page = (): JSX.Element => {
     if (this.state.page.home) {
       return (
         <Home
@@ -233,12 +233,14 @@ export class App extends React.Component<Props, State> {
     if (this.state.page.about) {
       return <About onNavigate={this.handleNavigate} />;
     }
-  }
+
+    return <div />;
+  };
 
   public render(): JSX.Element {
     return (
       <main role="main" className="container-fluid mt-3 mt-md-4 mb-3 mt-md-4">
-        {this.renderPage()}
+        <this.Page />
       </main>
     );
   }

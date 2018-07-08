@@ -247,7 +247,7 @@ export class Deck extends React.Component<Props, State> {
     e.currentTarget.blur();
   };
 
-  public renderHeader() {
+  public Header = (): JSX.Element => {
     const progress = String(
       (this.state.position / (this.props.slice.length - 1)) * 100 + "%"
     );
@@ -277,9 +277,9 @@ export class Deck extends React.Component<Props, State> {
         </button>
       </div>
     );
-  }
+  };
 
-  public renderMenu() {
+  public Menu = (): JSX.Element => {
     return (
       <ul
         className="deck-menu list-group list-group-flush"
@@ -301,20 +301,20 @@ export class Deck extends React.Component<Props, State> {
         </li>
       </ul>
     );
-  }
+  };
 
-  public renderQuestion(card: Card) {
+  public Question = (): JSX.Element => {
     return (
       <div
         className="card-body deck-card-body"
         onClickCapture={this.handleCardClick}
       >
-        <span className="text-center">{card.question}</span>
+        <span className="text-center">{this.card().question}</span>
       </div>
     );
-  }
+  };
 
-  public renderAnswer(card: Card) {
+  public Answer = (): JSX.Element => {
     return (
       <div
         className="card-body deck-card-body"
@@ -322,7 +322,7 @@ export class Deck extends React.Component<Props, State> {
         onClickCapture={this.handleCardClick}
       >
         <span className="text-center">
-          {this.state.showAnswer ? card.answer : "?"}
+          {this.state.showAnswer ? this.card().answer : "?"}
         </span>
         <button
           className={`card-control left ${
@@ -348,17 +348,15 @@ export class Deck extends React.Component<Props, State> {
         </button>
       </div>
     );
-  }
+  };
 
-  public render() {
-    const card = this.card();
-
+  public render(): JSX.Element {
     return (
       <div className={`card deck ${this.state.showMenu ? "menu-open" : ""}`}>
-        {this.renderHeader()}
-        {this.renderMenu()}
-        {this.renderQuestion(card)}
-        {this.renderAnswer(card)}
+        <this.Header />
+        <this.Menu />
+        <this.Question />
+        <this.Answer />
       </div>
     );
   }
