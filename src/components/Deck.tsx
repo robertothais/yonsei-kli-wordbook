@@ -180,7 +180,7 @@ export class Deck extends React.Component<Props, State> {
   };
 
   public handleShuffleClick = () => {
-    this.setState({ position: 0 }, () => {
+    this.setState({ position: 0, showAnswer: false }, () => {
       this.props.onShuffle();
     });
   };
