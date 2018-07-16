@@ -215,7 +215,7 @@ export class Deck extends React.Component<Props, State> {
     if (this.state.showMenu) {
       this.toggleMenu();
     }
-    this.setState({ position: 0 }, () => {
+    this.setState({ position: 0, showAnswer: false }, () => {
       this.props.onShuffle();
     });
   };
@@ -295,9 +295,9 @@ export class Deck extends React.Component<Props, State> {
         </li>
         <li className="list-group-item" onClick={this.handleSoundToggleClick}>
           <i className="material-icons">
-            {this.props.soundEnabled ? "volume_off" : "volume_up"}
+            {this.props.soundEnabled ? "volume_up" : "volume_off"}
           </i>
-          {this.props.soundEnabled ? "Sound Off" : "Sound On"}
+          {this.props.soundEnabled ? "Sound On" : "Sound Off"}
         </li>
       </ul>
     );
