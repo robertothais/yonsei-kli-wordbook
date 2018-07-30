@@ -3,5 +3,6 @@ import lesson2 from "./lesson-2.json";
 import lesson3 from "./lesson-3.json";
 import lesson4 from "./lesson-4.json";
 import lesson5 from "./lesson-5.json";
+import lesson6 from "./lesson-6.json";
 
-export default [lesson1, lesson2, lesson3, lesson4, lesson5];
+export default [lesson1, lesson2, lesson3, lesson4, lesson5, lesson6];
