@@ -177,7 +177,7 @@ export class Lexicon {
    *    - 8 levels
    *    - 16 lessons per level
    *    - 256 words per lesson
-  */
+   */
   protected sliceWords(level: number, lesson: number, range: Range): Slice {
     const start = typeof range.start === "number" ? range.start : 0;
     const end =
