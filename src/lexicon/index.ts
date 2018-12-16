@@ -51,7 +51,7 @@ export class Lexicon {
 
   public locateWord(address: Address): LocatedWord {
     const level = address >> 12;
-    const lesson = (address >> 8) & 0b111;
+    const lesson = (address >> 8) & 0b1111;
     const index = address & 0b11111111;
     const word = this.levels[level][lesson][index];
     return {
@@ -103,7 +103,7 @@ export class Lexicon {
       return false;
     }
 
-    // If we have a valid level and lesson, but an incomplete word  window, we
+    // If we have a valid level and lesson, but an incomplete word window, we
     // have a valid range.
     if (
       typeof range.start === "undefined" ||
