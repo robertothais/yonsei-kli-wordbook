@@ -6,3 +6,4 @@ notes
 *.log
 .firebaserc
 firebase.json
+.firebase
